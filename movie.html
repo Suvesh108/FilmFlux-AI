@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details - FilmFlux AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-overlay" id="bg-overlay"></div>
+    
+    <header class="glass-header">
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fa-solid fa-film"></i> FilmFlux <span class="ai-badge">AI</span>
+            </a>
+        </div>
+        <nav>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="index.html?view=favorites" class="nav-link">Favorites</a>
+        </nav>
+    </header>
+
+    <main class="movie-details-container">
+        <div id="movie-content" class="glass-panel details-panel">
+            <div class="loading-spinner">Loading...</div>
+        </div>
+    </main>
+
+    <script src="api.js?v=7"></script>
+    <script src="script.js?v=7"></script>
+</body>
+</html>

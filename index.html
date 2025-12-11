@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilmFlux.AI - Intelligent Movie Search</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-overlay" id="bg-overlay"></div>
+    
+    <header class="glass-header">
+        <div class="logo">
+            <i class="fa-solid fa-film"></i> FilmFlux <span class="ai-badge">AI</span>
+        </div>
+        <nav>
+            <button id="nav-home" class="active">Home</button>
+            <button id="nav-favorites">Favorites</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Discover Movies with <span class="gradient-text">AI Intelligence</span></h1>
+            
+            <!-- Search Mode Selector -->
+            <div class="search-mode-selector">
+                <button class="mode-btn active" data-mode="text">
+                    <i class="fa-solid fa-magnifying-glass"></i> Text Search
+                </button>
+                <button class="mode-btn" data-mode="genre">
+                    <i class="fa-solid fa-masks-theater"></i> Genre
+                </button>
+                <button class="mode-btn" data-mode="ai">
+                    <i class="fa-solid fa-robot"></i> AI Search
+                </button>
+            </div>
+
+            <!-- Text Search Mode -->
+            <div class="search-container" id="text-search-mode">
+                <i class="fa-solid fa-search search-icon"></i>
+                <input type="text" id="search-input" placeholder="Search for movies...">
+            </div>
+
+            <!-- Genre Filter Mode -->
+            <div class="search-container hidden" id="genre-search-mode">
+                <div class="genre-chips-container" id="genre-chips">
+                    <!-- Genre chips will be injected here -->
+                </div>
+            </div>
+
+            <!-- AI Search Mode -->
+            <div class="search-container hidden" id="ai-search-mode">
+                <i class="fa-solid fa-robot search-icon"></i>
+                <input type="text" id="ai-search-input" placeholder="e.g., 'funny space movies from the 90s' or 'emotional dramas about family'">
+                <button class="ai-search-btn" id="ai-search-btn">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Search
+                </button>
+            </div>
+        </section>
+
+        <section id="movie-grid" class="movie-grid">
+            <!-- Movie cards will be injected here -->
+        </section>
+
+        <div id="pagination" class="pagination hidden">
+            <button id="prev-page" disabled><i class="fa-solid fa-chevron-left"></i> Previous</button>
+            <span id="page-info">Page 1</span>
+            <button id="next-page">Next <i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </main>
+
+    <!-- Movie Details Modal -->
+    <div id="movie-modal" class="modal hidden">
+        <div class="modal-content glass-panel">
+            <button class="close-modal">&times;</button>
+            <div class="modal-body">
+                <div class="modal-poster">
+                    <img id="modal-img" src="" alt="Movie Poster">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-title">Movie Title</h2>
+                    <div class="modal-meta">
+                        <span id="modal-year">2023</span>
+                        <span id="modal-rating"><i class="fa-solid fa-star"></i> 8.5</span>
+                    </div>
+                    <p id="modal-overview" class="overview-text">Movie overview goes here...</p>
+                    
+                    <div class="ai-section">
+                        <h3><i class="fa-solid fa-robot"></i> AI Analysis</h3>
+                        <div id="ai-content" class="ai-content">
+                            <p class="placeholder-text">Click "Generate AI Description" to get a futuristic insight.</p>
+                        </div>
+                        <button id="generate-ai-btn" class="ai-btn">Generate AI Description</button>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button id="modal-fav-btn" class="fav-btn"><i class="fa-regular fa-heart"></i> Add to Favorites</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="recommendations-section">
+                <h3>You might also like</h3>
+                <div id="recommendations-grid" class="rec-grid">
+                    <!-- Recommendations injected here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="api.js?v=13"></script>
+    <script src="script.js?v=13"></script>
+</body>
+</html>
